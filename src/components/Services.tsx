@@ -61,7 +61,7 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
   ];
 
   return (
-    <section id="servicos" className="py-20 sm:py-28 lg:py-32 bg-[#0E0E0E] relative border-t border-[#E9E1D2]/8">
+    <section id="servicos" className="py-20 sm:py-28 lg:py-32 bg-[#0E0E0E] relative border-t border-[#B28A52]/10 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6 mb-12 sm:mb-16">

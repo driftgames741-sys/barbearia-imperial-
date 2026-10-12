@@ -28,7 +28,7 @@ export const RitualTimeline: React.FC = () => {
   ];
 
   return (
-    <section id="ritual" className="py-20 sm:py-28 lg:py-32 bg-[#0A0A0A] border-t border-[#E9E1D2]/8 relative">
+    <section id="ritual" className="py-20 sm:py-28 lg:py-32 bg-[#0A0A0A] border-t border-[#B28A52]/10 scroll-mt-20 relative">
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
         <div className="max-w-3xl space-y-3 sm:space-y-4 mb-12 sm:mb-16">
           <div className="flex items-center gap-3">

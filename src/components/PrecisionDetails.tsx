@@ -32,7 +32,7 @@ export const PrecisionDetails: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 sm:py-28 lg:py-32 bg-[#0A0A0A] border-t border-[#E9E1D2]/8 relative">
+    <section className="py-20 sm:py-28 lg:py-32 bg-[#0A0A0A] border-t border-[#B28A52]/10 relative">
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           {/* Visual: Editorial Instruments */}

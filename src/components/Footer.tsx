@@ -4,7 +4,7 @@ import { WhatsAppIcon } from './WhatsAppIcon.tsx';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#080808] border-t border-[#E9E1D2]/10 py-12 sm:py-16 text-[#C4BCAD]">
+    <footer className="bg-[#080808] border-t border-[#B28A52]/15 py-12 sm:py-16 text-[#C4BCAD]">
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 space-y-10 sm:space-y-12">
         {/* Reorganized Responsive Grid: 1 col mobile, 2 balanced cols on tablet, 3 on desktop */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 items-start">

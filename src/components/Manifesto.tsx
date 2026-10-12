@@ -6,7 +6,7 @@ export const Manifesto: React.FC = () => {
   return (
     <section
       id="manifesto"
-      className="relative py-20 sm:py-28 lg:py-32 bg-[#0A0A0A] border-t border-[#E9E1D2]/8 overflow-hidden"
+      className="relative py-20 sm:py-28 lg:py-32 bg-[#0A0A0A] border-t border-[#B28A52]/10 scroll-mt-20 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
         {/* Section Kicker */}

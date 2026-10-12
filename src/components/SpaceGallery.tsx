@@ -22,7 +22,7 @@ export const SpaceGallery: React.FC = () => {
   };
 
   return (
-    <section id="espaco" className="py-20 sm:py-28 lg:py-32 bg-[#0E0E0E] border-t border-[#E9E1D2]/8 relative">
+    <section id="espaco" className="py-20 sm:py-28 lg:py-32 bg-[#0E0E0E] border-t border-[#B28A52]/10 scroll-mt-20 relative">
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 space-y-10 sm:space-y-12">
         {/* Section Header */}
         <div className="max-w-3xl space-y-3 sm:space-y-4">
