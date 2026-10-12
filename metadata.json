@@ -1,0 +1,6 @@
+{
+  "name": "Barbearia Imperial",
+  "description": "Barbearia Imperial. Mais do que um corte, um ritual exclusivo de alfaiataria capilar, barba e visagismo masculino clássico contemporâneo.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

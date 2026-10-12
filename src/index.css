@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-canvas: #0A0A0A;
+    --bg-surface: #161616;
+    --bg-surface-elevated: #1F1F1F;
+    --text-primary: #E9E1D2;
+    --text-muted: #9E988E;
+    --accent-bronze: #B28A52;
+    --accent-bronze-hover: #C9A066;
+    --accent-wood: #2A1F18;
+    --border-subtle: rgba(233, 225, 210, 0.08);
+    --border-bronze: rgba(178, 138, 82, 0.25);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-canvas);
+    color: var(--text-primary);
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+.font-cinzel {
+  font-family: 'Cinzel', serif;
+}
+
+.font-editorial {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-sans-clean {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+/* Barber Pole Striped Motif */
+.barber-pole-stripes {
+  background: repeating-linear-gradient(
+    45deg,
+    #B28A52,
+    #B28A52 8px,
+    #161616 8px,
+    #161616 16px,
+    #E9E1D2 16px,
+    #E9E1D2 24px,
+    #161616 24px,
+    #161616 32px
+  );
+}
+
+.barber-pole-vertical-stripes {
+  background: repeating-linear-gradient(
+    -45deg,
+    rgba(178, 138, 82, 0.8),
+    rgba(178, 138, 82, 0.8) 6px,
+    rgba(22, 22, 22, 0.9) 6px,
+    rgba(22, 22, 22, 0.9) 12px,
+    rgba(233, 225, 210, 0.7) 12px,
+    rgba(233, 225, 210, 0.7) 18px,
+    rgba(22, 22, 22, 0.9) 18px,
+    rgba(22, 22, 22, 0.9) 24px
+  );
+}
+
+/* Hairline dividers */
+.divider-hairline {
+  border-color: rgba(233, 225, 210, 0.08);
+}
+
+/* Subtle image reveal masks */
+.editorial-mask {
+  mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+}
