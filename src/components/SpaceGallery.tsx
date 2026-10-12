@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Eye } from 'lucide-react';
 import { RevealText } from './RevealText.tsx';
+import { MediaImage } from './MediaImage.tsx';
 
 export const SpaceGallery: React.FC = () => {
   const [tiltOffset, setTiltOffset] = useState({ x: 0, y: 0 });
@@ -64,16 +65,26 @@ export const SpaceGallery: React.FC = () => {
               transition: 'transform 0.25s ease-out',
             }}
           >
-            <div className="w-full aspect-[16/10] sm:aspect-[16/9] lg:aspect-[21/9] overflow-hidden bg-[#121212]">
-              <img
-                src="https://i.postimg.cc/J0CtDPqW/Ambiente-completo-da-barbearia.png"
-                alt="Ambiente Completo da Barbearia — Salão clássico com cadeiras em couro e bancadas em madeira nobre"
-                className="w-full h-full object-cover object-center"
-                loading="lazy"
-                decoding="async"
-                referrerPolicy="no-referrer"
-              />
-            </div>
+            <MediaImage
+              src="/media/ambiente-completo.webp"
+              fallbackSources={[
+                '/media/ambiente-completo.jpg',
+                'https://i.postimg.cc/J0CtDPqW/Ambiente-completo-da-barbearia.png',
+              ]}
+              sources={[
+                { srcSet: '/media/ambiente-completo.webp', type: 'image/webp' },
+                { srcSet: '/media/ambiente-completo.jpg', type: 'image/jpeg' },
+              ]}
+              alt="Ambiente Completo da Barbearia — Salão clássico com cadeiras em couro e bancadas em madeira nobre"
+              title="Ambiente Completo da Barbearia"
+              description="Vista panorâmica do salão em jacarandá, poltronas hidráulicas clássicas e iluminação 2700K"
+              aspectRatioClass="aspect-[16/10] sm:aspect-[16/9] lg:aspect-[21/9]"
+              className="w-full border-0"
+              objectPosition="object-center"
+              width={1279}
+              height={720}
+              priority={false}
+            />
           </div>
 
           {/* Interactive Editorial Overlay Badge */}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { RevealText } from './RevealText.tsx';
+import { MediaImage } from './MediaImage.tsx';
 
 export const Manifesto: React.FC = () => {
   return (
@@ -80,17 +81,26 @@ export const Manifesto: React.FC = () => {
             <div className="relative group max-w-md mx-auto lg:max-w-none">
               <div className="absolute -inset-2 border border-[#B28A52]/20 translate-x-1.5 translate-y-1.5 pointer-events-none transition-transform duration-500 group-hover:translate-x-1 group-hover:translate-y-1" />
 
-              <div className="relative overflow-hidden bg-[#121212] border border-[#B28A52]/20 aspect-[4/5] editorial-mask shadow-2xl shadow-black/80 group">
-                <img
-                  src="https://i.postimg.cc/Bb5bxHhR/Barbeiro-cortando-cabelo-O-Ritual-do-Mestre.jpg"
-                  alt="O Ritual do Mestre — Barbeiro cortando cabelo com tesoura e atenção aos detalhes"
-                  className="w-full h-full object-cover object-[center_25%] transition-transform duration-700 group-hover:scale-102"
-                  loading="lazy"
-                  decoding="async"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-[#0A0A0A]/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
-              </div>
+              <MediaImage
+                src="/media/ritual-do-mestre.webp"
+                fallbackSources={[
+                  '/media/ritual-do-mestre.jpg',
+                  'https://i.postimg.cc/Bb5bxHhR/Barbeiro-cortando-cabelo-O-Ritual-do-Mestre.jpg',
+                ]}
+                sources={[
+                  { srcSet: '/media/ritual-do-mestre.webp', type: 'image/webp' },
+                  { srcSet: '/media/ritual-do-mestre.jpg', type: 'image/jpeg' },
+                ]}
+                alt="O Ritual do Mestre — Barbeiro cortando cabelo com tesoura e atenção aos detalhes"
+                title="O Ritual do Mestre"
+                description="O profissional trabalhando com foco nas mãos, alinhamento e precisão artesanal"
+                aspectRatioClass="aspect-[4/5]"
+                className="editorial-mask shadow-2xl shadow-black/80"
+                objectPosition="object-[center_25%]"
+                width={1280}
+                height={956}
+                priority={false}
+              />
             </div>
           </div>
         </div>

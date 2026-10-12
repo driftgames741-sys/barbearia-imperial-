@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { RevealText } from './RevealText.tsx';
 import { WhatsAppIcon } from './WhatsAppIcon.tsx';
+import { MediaImage } from './MediaImage.tsx';
 
 interface ServicesProps {
   onSelectService: (serviceName: string) => void;
@@ -12,12 +13,15 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
     {
       id: 'corte',
       name: 'Corte de Alfaiataria',
-      imageSrc: 'https://i.postimg.cc/wMY3y0Vp/Homem-com-corte-degrade-pronto.png',
-      localFallback: '/media/corte-degrade.png',
+      webpSrc: '/media/corte-degrade.webp',
+      jpgSrc: '/media/corte-degrade.jpg',
+      remoteSrc: 'https://i.postimg.cc/wMY3y0Vp/Homem-com-corte-degrade-pronto.png',
       imageTitle: 'Corte Masculino & Degradê',
       imageDesc: 'Graduação refinada e caimento natural sob medida',
       duration: '50 min',
       objectPosition: 'object-[center_20%]',
+      width: 800,
+      height: 800,
       description:
         'Diagnóstico visagista, lavagem relaxante com ativos calmantes, corte lapidado com tesouras forjadas e finalização artesanal.',
       highlights: ['Análise de proporção craniana', 'Massagem capilar revigorante', 'Acabamento navalhado em nuca'],
@@ -25,12 +29,15 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
     {
       id: 'barba',
       name: 'Barba & Acabamento',
-      imageSrc: 'https://i.postimg.cc/Znz0BVLQ/Barba-e-acabamento-com-navalha.png',
-      localFallback: '/media/barba-acabamento.png',
+      webpSrc: '/media/barba-acabamento.webp',
+      jpgSrc: '/media/barba-acabamento.jpg',
+      remoteSrc: 'https://i.postimg.cc/Znz0BVLQ/Barba-e-acabamento-com-navalha.png',
       imageTitle: 'Barba Tradicional com Navalha',
       imageDesc: 'Toalha aquecida, óleos nobres e lâmina de precisão',
       duration: '45 min',
       objectPosition: 'object-[center_35%]',
+      width: 640,
+      height: 800,
       description:
         'O ritual clássico: toalha aquecida aromatizada, emulsão densa em pincel macio, lâmina de precisão e bálsamo refrescante pós-navalha.',
       highlights: ['Vaporização com óleo de cedro', 'Lâmina de alta precisão', 'Bálsamo calmante e hidratação'],
@@ -38,12 +45,15 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
     {
       id: 'completa',
       name: 'Experiência Completa',
-      imageSrc: 'https://i.postimg.cc/Hn1jcBtZ/Experiencia-final-barbeiro-e-cliente.png',
-      localFallback: '/media/experiencia-final.png',
+      webpSrc: '/media/experiencia-final.webp',
+      jpgSrc: '/media/experiencia-final.jpg',
+      remoteSrc: 'https://i.postimg.cc/Hn1jcBtZ/Experiencia-final-barbeiro-e-cliente.png',
       imageTitle: 'Experiência Imperial Integrada',
       imageDesc: 'Harmonia integral entre cabelo, barba e bem-estar',
       duration: '90 min',
       objectPosition: 'object-[center_30%]',
+      width: 1279,
+      height: 720,
       description:
         'Alinhamento total de cabelo e barba em harmonia estética. Inclui consultoria de imagem, tratamento facial e bebida cortesia.',
       highlights: ['Corte visagista e barboterapia', 'Tratamento facial com toalha fria', 'Alinhamento integral de sobrancelha'],
@@ -93,20 +103,28 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
                 index === 2 ? 'sm:col-span-2 lg:col-span-1 sm:max-w-md sm:mx-auto lg:max-w-none w-full' : ''
               }`}
             >
-              {/* Image Frame with duration pill */}
+              {/* Image Frame with duration badge */}
               <div className="overflow-hidden relative aspect-[16/10] bg-[#121212] border-b border-[#E9E1D2]/10">
-                <img
-                  src={item.imageSrc}
+                <MediaImage
+                  src={item.webpSrc}
+                  fallbackSources={[item.jpgSrc, item.remoteSrc]}
+                  sources={[
+                    { srcSet: item.webpSrc, type: 'image/webp' },
+                    { srcSet: item.jpgSrc, type: 'image/jpeg' },
+                  ]}
                   alt={item.name}
-                  className={`w-full h-full object-cover ${item.objectPosition} transition-transform duration-700 group-hover:scale-102`}
-                  loading="lazy"
-                  decoding="async"
-                  referrerPolicy="no-referrer"
+                  title={item.imageTitle}
+                  description={item.imageDesc}
+                  aspectRatioClass="aspect-[16/10]"
+                  className="w-full h-full border-0"
+                  objectPosition={item.objectPosition}
+                  width={item.width}
+                  height={item.height}
+                  priority={false}
                 />
                 <div className="absolute top-3 right-3 sm:top-4 sm:right-4 z-20 px-2.5 py-1 bg-[#0A0A0A]/90 backdrop-blur-md border border-[#E9E1D2]/15 text-[10px] sm:text-[11px] font-mono text-[#B28A52] uppercase tracking-wider">
                   {item.duration}
                 </div>
-                <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-[#0A0A0A]/60 via-transparent to-transparent opacity-50" />
               </div>
 
               {/* Card Body */}

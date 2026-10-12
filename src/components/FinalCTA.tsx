@@ -2,6 +2,7 @@ import React from 'react';
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
 import { RevealText } from './RevealText.tsx';
 import { WhatsAppIcon } from './WhatsAppIcon.tsx';
+import { MediaImage } from './MediaImage.tsx';
 
 interface FinalCTAProps {
   onOpenBookingModal: () => void;
@@ -15,17 +16,26 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenBookingModal }) => {
           {/* Left: Final Image */}
           <div className="lg:col-span-5 relative group max-w-md mx-auto lg:max-w-none">
             <div className="absolute -inset-2 border border-[#B28A52]/20 translate-x-1.5 -translate-y-1.5 pointer-events-none transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1" />
-              <div className="relative overflow-hidden bg-[#121212] border border-[#B28A52]/20 aspect-[4/5] shadow-2xl shadow-black/80 group">
-                <img
-                  src="https://i.postimg.cc/Hn1jcBtZ/Experiencia-final-barbeiro-e-cliente.png"
-                  alt="Experiência Final — Barbeiro e cliente satisfeito em frente ao espelho com corte alinhado"
-                  className="w-full h-full object-cover object-[center_20%] transition-transform duration-700 group-hover:scale-102"
-                  loading="lazy"
-                  decoding="async"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-[#0A0A0A]/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
-              </div>
+            <MediaImage
+              src="/media/experiencia-final.webp"
+              fallbackSources={[
+                '/media/experiencia-final.jpg',
+                'https://i.postimg.cc/Hn1jcBtZ/Experiencia-final-barbeiro-e-cliente.png',
+              ]}
+              sources={[
+                { srcSet: '/media/experiencia-final.webp', type: 'image/webp' },
+                { srcSet: '/media/experiencia-final.jpg', type: 'image/jpeg' },
+              ]}
+              alt="Experiência Final — Barbeiro e cliente satisfeito em frente ao espelho com corte alinhado"
+              title="Experiência Final"
+              description="O atendimento concluído entre cliente e mestre barbeiro em harmonia estética"
+              aspectRatioClass="aspect-[4/5]"
+              className="shadow-2xl shadow-black/80"
+              objectPosition="object-[center_20%]"
+              width={1279}
+              height={720}
+              priority={false}
+            />
           </div>
 
           {/* Right: Editorial CTA and Reservation Policy */}

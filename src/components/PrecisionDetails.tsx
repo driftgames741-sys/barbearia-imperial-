@@ -1,6 +1,7 @@
 import React from 'react';
 import { ShieldCheck, Compass, Feather, Sparkles } from 'lucide-react';
 import { RevealText } from './RevealText.tsx';
+import { MediaImage } from './MediaImage.tsx';
 
 export const PrecisionDetails: React.FC = () => {
   const pillars = [
@@ -38,17 +39,26 @@ export const PrecisionDetails: React.FC = () => {
           <div className="lg:col-span-5 order-2 lg:order-1">
             <div className="relative group max-w-md mx-auto lg:max-w-none">
               <div className="absolute -inset-2 border border-[#B28A52]/20 -translate-x-1.5 translate-y-1.5 pointer-events-none transition-transform duration-500 group-hover:-translate-x-1 group-hover:translate-y-1" />
-              <div className="relative overflow-hidden bg-[#121212] border border-[#B28A52]/20 aspect-[4/5] shadow-2xl shadow-black/80 group">
-                <img
-                  src="https://i.postimg.cc/J030bZTd/Ferramentas-Premium-em-Barbearia-Classica.png"
-                  alt="Ferramentas Premium em Barbearia Clássica — Navalhete, tesouras e escova de acabamento"
-                  className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-102"
-                  loading="lazy"
-                  decoding="async"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-[#0A0A0A]/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
-              </div>
+              <MediaImage
+                src="/media/instrumentos-premium.webp"
+                fallbackSources={[
+                  '/media/instrumentos-premium.jpg',
+                  'https://i.postimg.cc/J030bZTd/Ferramentas-Premium-em-Barbearia-Classica.png',
+                ]}
+                sources={[
+                  { srcSet: '/media/instrumentos-premium.webp', type: 'image/webp' },
+                  { srcSet: '/media/instrumentos-premium.jpg', type: 'image/jpeg' },
+                ]}
+                alt="Ferramentas Premium em Barbearia Clássica — Navalhete, tesouras e escova de acabamento"
+                title="Instrumentos Premium"
+                description="Tesouras forjadas à mão, navalhete de alta precisão e materiais esterilizados"
+                aspectRatioClass="aspect-[4/5]"
+                className="shadow-2xl shadow-black/80"
+                objectPosition="object-center"
+                width={800}
+                height={800}
+                priority={false}
+              />
             </div>
           </div>
 
